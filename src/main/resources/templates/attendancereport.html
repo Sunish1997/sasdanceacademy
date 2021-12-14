@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en" >
+
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>   
+ <body>
+
+    <div class="panel-body" align = "center" >
+      
+      <label for="birthday">Date:</label>
+<input type="date" id="birthday" name="birthday">
+          
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+           <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Course Name</th>
+             <th>Present</th>
+             <th>Absent</th>
+   </tr>
+  </thead>
+ 
+  <tbody>
+      <tr  th:each="student : ${liststudent}">
+<td th:text="${student.id}">Student ID</td>
+<td th:text="${student.stname}">Student Name</td>
+<td th:text="${student.coursename}">Course</td>
+   <td   th:text="${student.attdance}">present</td >
+   <td th:text="${student.attdance}">absent</td>
+  
+     </tr>
+  </tbody>
+</table>
+                  
+</div>
+
+ </body>
+
+</html >
+<!--
+	<td>
+ <input type="radio" name="attendance"    th:value="${student.attdance}"   >Present</input> 
+  
+
+</td>     
+<td>
+  <input type="radio" name="attendance"   th:value="${student.attdance}"    >Absent</input>
+  
+
+</td>  
+	
+	 <input type="radio"   th:value="${student.attdance}"   >Present</input> 
+  <input type="radio"  th:value="${student.attdance}"    >Absent</input>  
+<a th:href="@{'/Attendance/present/' + ${student.id}}">Present</a>
+<a th:href="@{'/Attendance/absent/' + ${student.id}}">Absent</a>  -->

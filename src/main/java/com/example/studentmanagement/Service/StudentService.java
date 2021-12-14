@@ -4,7 +4,8 @@ import java.util.List;
  
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
- 
+
+import com.example.studentmanagement.Domain.AttendanceHistory;
 import com.example.studentmanagement.Domain.Student;
 import com.example.studentmanagement.Repository.StudentRepository;
  
@@ -32,4 +33,8 @@ System.out.println(repo.findAll());
         repo.deleteById(id);
     }
  
+    
+ 
+    
+    
 }

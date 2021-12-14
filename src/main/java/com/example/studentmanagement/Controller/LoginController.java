@@ -1,5 +1,6 @@
 package com.example.studentmanagement.Controller;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.studentmanagement.Domain.Course;
 import com.example.studentmanagement.Domain.Login;
 import com.example.studentmanagement.Service.LoginService;
 
@@ -69,12 +72,14 @@ public class LoginController {
 	    return "profile";
 	}
 	
-	@RequestMapping(value = "/attendance", method = RequestMethod.GET)
-	public String attendance()
-	{
+	// @RequestMapping(value = "/attendance", method = RequestMethod.GET)
+// 	public String attendance()
+// 	{
 	   
-	    return "attendance";
-	}
+	//    return "attendance";
+//	}
+	
+	
 	
 	@RequestMapping(value = "/employees", method = RequestMethod.GET)
 	public String employees()
@@ -93,9 +98,14 @@ public class LoginController {
 	public String leaves()
 	{
 	   
-	    return "leaves";
+	    return "studentlogin";
 	}
-    
+	@RequestMapping(value = "/sloginf", method = RequestMethod.GET)
+	public String sloginf()
+	{
+	   
+	    return "sloginf";
+	}
 
 	
 	

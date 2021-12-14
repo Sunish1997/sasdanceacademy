@@ -4,7 +4,30 @@ public class StudentDAO {
 private Long id;
 private String stname;
  
+private String attdance;
+
+private boolean attboolean;
+
 private String coursename;
+
+
+public boolean isAttboolean() {
+	return attboolean;
+}
+
+public void setAttboolean(boolean attboolean) {
+	this.attboolean = attboolean;
+}
+
+public String getAttdance() {
+	return attdance;
+}
+
+public void setAttdance(String attdance) {
+	this.attdance = attdance;
+}
+
+
  
 public Long getId() {
 return id;

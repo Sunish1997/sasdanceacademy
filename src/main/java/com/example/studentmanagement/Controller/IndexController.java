@@ -19,9 +19,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.studentmanagement.Domain.Login;
+import com.example.studentmanagement.Domain.Student;
 import com.example.studentmanagement.Domain.Course;
+import com.example.studentmanagement.Domain.AttendanceHistory;
 import com.example.studentmanagement.Domain.StudentDAO;
+import com.example.studentmanagement.Repository.AttendanceRepository;
 import com.example.studentmanagement.Repository.StudentRepository;
+import com.example.studentmanagement.Service.AttendanceService;
 import com.example.studentmanagement.Service.CourseService;
 import com.example.studentmanagement.Service.StudentService;
 
@@ -40,6 +44,10 @@ private StudentService services;
 
 @Autowired
 private StudentRepository studentRepository;
+
+
+
+
 
  
 
@@ -86,8 +94,6 @@ public String adminlogin(Model model)
 
       return "login";
 }
-
-
 
 
 
