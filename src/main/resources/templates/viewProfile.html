@@ -1,17 +1,17 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     
-   <!-- <title>Preclinic - Medical & Hospital - Bootstrap 4 Admin Template</title> -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Preclinic - Medical & Hospital - Bootstrap 4 Admin Template</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
     <!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.min.js"></script>
-		<script src="assets/js/respond.min.js"></script>
+		<script src="/assets/js/html5shiv.min.js"></script>
+		<script src="/assets/js/respond.min.js"></script>
 	<![endif]-->
 </head>
 
@@ -20,7 +20,7 @@
         <div class="header">
 			<div class="header-left">
 				<a href="index.html" class="logo">
-					<img src="/img/favicon.png" width="35" height="35" alt=""> <span>SAS Dance Academy</span>
+					<img src="/assets/img/logo.png" width="35" height="35" alt=""> <span>Preclinic</span>
 				</a>
 			</div>
 			<a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
@@ -38,7 +38,7 @@
                                     <a href="activities.html">
                                         <div class="media">
 											<span class="avatar">
-												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid">
+												<img alt="John Doe" src="/assets/img/user.jpg" class="img-fluid">
 											</span>
 											<div class="media-body">
 												<p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
@@ -103,14 +103,12 @@
                 </li>
                 <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
-                        <span class="user-img">
-							<img class="rounded-circle" src="assets/img/user.jpg" width="24" alt="Admin">
-							<span class="status online"></span>
-						</span>
-						<span>Admin</span>
+                        <span class="user-img"><img class="rounded-circle" src="/assets/img/user.jpg" width="40" alt="Admin">
+							<span class="status online"></span></span>
+                        <span>Admin</span>
                     </a>
 					<div class="dropdown-menu">
-						<a  th:href = "@{'/profile'}">My Profile</a>
+						<a class="dropdown-item" href="profile.html">My Profile</a>
 						<a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
 						<a class="dropdown-item" href="settings.html">Settings</a>
 						<a class="dropdown-item" href="login.html">Logout</a>
@@ -118,7 +116,7 @@
                 </li>
             </ul>
             <div class="dropdown mobile-user-menu float-right">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="profile.html">My Profile</a>
                     <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
@@ -132,31 +130,31 @@
                 <div id="sidebar-menu" class="sidebar-menu">
                     <ul>
                         <li class="menu-title">Main</li>
-                        <li class="active">
-                            <a href="index.html" style="pointer-events: none" ><i class="fa fa-dashboard"    ></i> <span>Dashboard</span></a>
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                         </li>
 						<li>
-                            <a href="doctors.html" style="pointer-events: none"   ><i class="fa fa-user-md"></i> <span>Masters</span></a>
+                            <a href="doctors.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
                         </li>
                         <li>
-                            <a href="patients.html" style="pointer-events: none"   ><i class="fa fa-wheelchair"></i> <span>Students</span></a>
+                            <a href="patients.html"><i class="fa fa-wheelchair"></i> <span>Patients</span></a>
                         </li>
                         <li>
-                            <a href="appointments.html" style="pointer-events: none"  ><i class="fa fa-calendar"></i> <span>Appointments</span></a>
+                            <a href="appointments.html"><i class="fa fa-calendar"></i> <span>Appointments</span></a>
                         </li>
                         <li>
-                            <a href="schedule.html"><i class="fa fa-calendar-check-o"></i> <span> Schedule</span></a>
+                            <a href="schedule.html"><i class="fa fa-calendar-check-o"></i> <span>Doctor Schedule</span></a>
                         </li>
                         <li>
-                            <a href="departments.html"><i class="fa fa-hospital-o"></i> <span>Courses</span></a>
+                            <a href="departments.html"><i class="fa fa-hospital-o"></i> <span>Departments</span></a>
                         </li>
 						<li class="submenu">
-							<a href="#"><i class="fa fa-user"></i> <span> Students </span> <span class="menu-arrow"></span></a>
+							<a href="#"><i class="fa fa-user"></i> <span> Employees </span> <span class="menu-arrow"></span></a>
 							<ul style="display: none;">
-								<li><a th:href = "@{'/student'}">Student List</a></li>
-								<li><a th:href = "@{'/leaves'}">Leaves</a></li>
-								<li><a th:href = "@{'/holidays'}">Holidays</a></li>
-								<li><a th:href = "@{'/Attendance/attendance'}">Attendance</a></li>
+								<li><a href="employees.html">Employees List</a></li>
+								<li><a href="leaves.html">Leaves</a></li>
+								<li><a href="holidays.html">Holidays</a></li>
+								<li><a href="attendance.html">Attendance</a></li>
 							</ul>
 						</li>
 						<li class="submenu">
@@ -172,7 +170,7 @@
 						<li class="submenu">
 							<a href="#"><i class="fa fa-book"></i> <span> Payroll </span> <span class="menu-arrow"></span></a>
 							<ul style="display: none;">
-								<li><a href="salary.html"> Trainee Salary </a></li>
+								<li><a href="salary.html"> Employee Salary </a></li>
 								<li><a href="salary-view.html"> Payslip </a></li>
 							</ul>
 						</li>
@@ -252,12 +250,12 @@
                         <li class="submenu">
                             <a href="#"><i class="fa fa-columns"></i> <span>Pages</span> <span class="menu-arrow"></span></a>
                             <ul style="display: none;">
-                                <li><a th:href = "@{'/login'}"> Login </a></li>
-                                 <li><a href="register.html"> Register </a></li>
+                                <li><a href="login.html"> Login </a></li>
+                                <li><a href="register.html"> Register </a></li>
                                 <li><a href="forgot-password.html"> Forgot Password </a></li>
                                 <li><a href="change-password2.html"> Change Password </a></li>
                                 <li><a href="lock-screen.html"> Lock Screen </a></li>
-                                <li><a href="profile.html"> Profile </a></li>
+                                <li><a class="active" href="profile.html"> Profile </a></li>
                                 <li><a href="gallery.html"> Gallery </a></li>
                                 <li><a href="error-404.html">404 Error </a></li>
                                 <li><a href="error-500.html">500 Error </a></li>
@@ -291,73 +289,160 @@
             </div>
         </div>
         <div class="page-wrapper">
-           
- 
-<div>
-<h2 >Student Registation</h2>
-<tr>
-    <div align = "left" >
-  <h3><a  th:href="@{'/Student/addstudent'}">Add new</a></h3>    
-    </div>
-</tr>
- 
-    <div class="col-sm-8" align = "center">
-    <div class="panel-body" align = "center" >
-          
-  <table class="table">
-  <thead class="thead-dark">
-    <tr>
-           <th>Student ID</th>
-            <th>Student Name</th>
-            <th>Course Name</th>
-             <th>edit</th>
-             <th>delete</th>
-   </tr>
-  </thead>
- 
-  <tbody>
-      <tr  th:each="student : ${liststudent}">
-<td th:text="${student.id}">Student ID</td>
-<td>
-<a th:text="${student.stname}"  th:href="@{'/Student/viewProfile/' + ${student.id}}">Student Name</a>
-</td>
-<!-- <td th:text="${student.stname}">Student Name</td> -->
-<td th:text="${student.coursename}">Course</td>
-<td>
-<a th:href="@{'/Student/edit/' + ${student.id}}">Edit</a>
-</td>     
-<td>
-<a th:href="@{'/Student/delete/' + ${student.id}}">Delete</a>
-</td>     
-     </tr>
-  </tbody>
-</table>
-                  
-</div>
-</div>
- 
-    </tr>
- 
-</tbody>
-</table>
-<div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-7 col-6">
+                      <h1 >My Profile</h1>
+                      <!--  <h4 class="page-title">My Profile</h4> -->
+                    </div>
 
-<!--  
-	<tbody>
-      <tr  th:each="student : ${liststudent}">
-<td th:text="${student.id}">Student ID</td>
-<td th:text="${student.stname}">Student Name</td>
-<td th:text="${student.coursename}">Course</td>
-<td>
-<a th:href="@{'/Student/edit/' + ${student.id}}">Edit</a>
-</td>     
-<td>
-<a th:href="@{'/Student/delete/' + ${student.id}}">Delete</a>
-</td>     
-     </tr>
-  </tbody>
-	-->
+                    <div class="col-sm-5 col-6 text-right m-b-30">
+                        <a href="edit-profile.html" class="btn btn-primary btn-rounded"><i class="fa fa-plus"></i> Edit Profile</a>
+                    </div>
+                </div>
+                <div class="card-box profile-header">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="profile-view">
+                                <div class="profile-img-wrap">
+                                    <div class="profile-img">
+                                        <a href="#"><img class="avatar" src="/assets/img/doctor-03.jpg" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="profile-basic">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="profile-info-left">
+                                                <h3 th:text="${student.stname}"   class="user-name m-t-0 mb-0">Cristina Groves</h3  >
+                                                <small th:text="${student.coursename}" class="text-muted">Gynecologist</small >
+                                                <div th:text="${student.studentid}"  class="staff-id">Employee ID : DR-0001</div>
+                                                <div class="staff-msg"><a href="chat.html" class="btn btn-primary">Send Message</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <ul class="personal-info">
+                                                <li>
+                                                    <span  class="title">Phone:</span>
+                                                    <span th:text="${student.mobileno}" class="text"><a href="">770-889-6484</a></span >
+                                                </li>
+                                                <li>
+                                                    <span  class="title">Email:</span>
+                                             <span th:text="${student.email}" class="text"><a href=""><span class="__cf_email__" data-cfemail="97f4e5fee4e3fef9f6f0e5f8e1f2e4d7f2eff6fae7fbf2b9f4f8fa">[email&#160;protected]</span></a></span >
+                                                </li>
+                                                <li>
+                                                    <span  class="title">Birthday:</span>
+                                                    <span th:text="${student.dob}" class="text">3rd March</span >
+                                                </li>
+                                                <li>
+                                                    <span  class="title">Address:</span >
+                                                    <span th:text="${student.address}" class="text">714 Burwell Heights Road, Bridge City, TX, 77611</span >
+                                                </li>
+                                                <li>
+                                                    <span  class="title">gender:</span >
+                                                    <span th:text="${student.gender}" class="text">Female</span >
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>
+                    </div>
+                </div>
+				<div class="profile-tabs">
+					<ul class="nav nav-tabs nav-tabs-bottom">
+						<li class="nav-item"><a class="nav-link active" href="#about-cont" data-toggle="tab">About</a></li>
+						<li class="nav-item"><a class="nav-link" href="#bottom-tab2" data-toggle="tab">Profile</a></li>
+						<li class="nav-item"><a class="nav-link" href="#bottom-tab3" data-toggle="tab">Messages</a></li>
+					</ul>
 
+					<div class="tab-content">
+						<div class="tab-pane show active" id="about-cont">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card-box">
+                            <h3 class="card-title">Education Informations</h3>
+                            <div class="experience-box">
+                                <ul class="experience-list">
+                                    <li>
+                                        <div class="experience-user">
+                                            <div class="before-circle"></div>
+                                        </div>
+                                        <div class="experience-content">
+                                            <div class="timeline-content">
+                                                <a href="#/" class="name">International College of Medical Science (UG)</a>
+                                                <div>MBBS</div>
+                                                <span class="time">2001 - 2003</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="experience-user">
+                                            <div class="before-circle"></div>
+                                        </div>
+                                        <div class="experience-content">
+                                            <div class="timeline-content">
+                                                <a href="#/" class="name">International College of Medical Science (PG)</a>
+                                                <div>MD - Obstetrics & Gynaecology</div>
+                                                <span class="time">1997 - 2001</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-box mb-0">
+                            <h3 class="card-title">Experience</h3>
+                            <div class="experience-box">
+                                <ul class="experience-list">
+                                    <li>
+                                        <div class="experience-user">
+                                            <div class="before-circle"></div>
+                                        </div>
+                                        <div class="experience-content">
+                                            <div class="timeline-content">
+                                                <a href="#/" class="name">Consultant Gynecologist</a>
+                                                <span class="time">Jan 2014 - Present (4 years 8 months)</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="experience-user">
+                                            <div class="before-circle"></div>
+                                        </div>
+                                        <div class="experience-content">
+                                            <div class="timeline-content">
+                                                <a href="#/" class="name">Consultant Gynecologist</a>
+                                                <span class="time">Jan 2009 - Present (6 years 1 month)</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="experience-user">
+                                            <div class="before-circle"></div>
+                                        </div>
+                                        <div class="experience-content">
+                                            <div class="timeline-content">
+                                                <a href="#/" class="name">Consultant Gynecologist</a>
+                                                <span class="time">Jan 2004 - Present (5 years 2 months)</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+						</div>
+						<div class="tab-pane" id="bottom-tab2">
+							Tab content 2
+						</div>
+						<div class="tab-pane" id="bottom-tab3">
+							Tab content 3
+						</div>
+					</div>
+				</div>
+            </div>
             <div class="notification-box">
                 <div class="msg-sidebar notifications msg-noti">
                     <div class="topnav-dropdown-header">
@@ -522,7 +607,7 @@
                                             <span class="avatar">J</span>
                                         </div>
                                         <div class="list-body">
-                                           <span class="message-author">Jeffery Lalor</span>
+                                            <span class="message-author">Jeffery Lalor</span>
                                             <span class="message-time">12:28 AM</span>
                                             <div class="clearfix"></div>
                                             <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
@@ -568,31 +653,13 @@
                 </div>
             </div>
         </div>
-		<div id="delete_employee" class="modal fade delete-modal" role="dialog">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-body text-center">
-						<img src="assets/img/sent.png" alt="" width="50" height="46">
-						<h3>Are you sure want to delete this Employee?</h3>
-						<div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
-							<button type="submit" class="btn btn-danger">Delete</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
     </div>
     <div class="sidebar-overlay" data-reff=""></div>
-    <script src="assets/js/jquery-3.2.1.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.dataTables.min.js"></script>
-    <script src="assets/js/dataTables.bootstrap4.min.js"></script>
-    <script src="assets/js/jquery.slimscroll.js"></script>
-    <script src="assets/js/select2.min.js"></script>
-    <script src="assets/js/moment.min.js"></script>
-    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+	<script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/jquery.slimscroll.js"></script>
+    <script src="/assets/js/app.js"></script>
 </body>
 
 </html>

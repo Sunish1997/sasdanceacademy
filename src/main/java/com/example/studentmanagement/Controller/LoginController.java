@@ -1,5 +1,6 @@
 package com.example.studentmanagement.Controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -18,7 +19,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.studentmanagement.Domain.Course;
 import com.example.studentmanagement.Domain.Login;
+import com.example.studentmanagement.Domain.Student;
+import com.example.studentmanagement.Domain.StudentDAO;
+import com.example.studentmanagement.Repository.StudentRepository;
+import com.example.studentmanagement.Service.CourseService;
 import com.example.studentmanagement.Service.LoginService;
+import com.example.studentmanagement.Service.StudentService;
 
 
 
@@ -27,6 +33,13 @@ public class LoginController {
 	
 	@Autowired
     private LoginService userService;
+	
+	@Autowired
+    private StudentService service;
+
+
+@Autowired
+private StudentRepository studentRepository;
 
   /*                                 
     @GetMapping("/login")
@@ -58,6 +71,58 @@ public class LoginController {
 
 }
     
+    @PostMapping("/StudentProfile")
+    public ModelAndView Studentlogin(@ModelAttribute("user") Login user ) {
+    	ModelAndView mav = new ModelAndView();
+    	Login oauthUser = userService.login(user.getUsername(), user.getPassword());
+    	
+
+    	System.out.print(oauthUser);
+    	if(Objects.nonNull(oauthUser)) 
+    	{	
+  
+    		// List<StudentDAO> li = new ArrayList<>();
+        	 StudentDAO student = new StudentDAO();
+        	 for(Object[] o : studentRepository.findStudentProfileByStdid(user.getPassword())  )
+        	 {
+        		// StudentDAO student = new StudentDAO();
+        		 
+        		 student.setId(Long.parseLong(String.valueOf(o[0])));
+        		 student.setStname((String)o[1]);
+        		 student.setCoursename((String)o[2]);
+        		 student.setAddress((String)o[9]);
+        		 student.setDob((java.sql.Date)o[8]);
+        		 student.setEmail((String)o[7]);
+        		 student.setGender((String)o[10]);
+        		 student.setFee(Long.parseLong(String.valueOf(o[5])));
+        		 student.setMobileno(Long.parseLong(String.valueOf(o[6])));
+        		 student.setStudentid((String)o[11]);
+        	
+        		// li.add(student);
+        	 }
+          
+            //   Student std = service.get(id);
+          //    Student Student = new Student();
+          //	Student.setStname("profile");
+          //    Student = service.get(id);
+          	
+        	 mav.addObject("student", student);
+        	 mav.setViewName("viewProfile");
+              return mav;
+    		
+    		
+    	//	return "adminuser";
+    	
+    		
+    	} else {
+    	//	return "redirect:/";
+    		 mav.setViewName("studentlogin");
+             return mav;
+    	
+    	}
+
+}
+    
     @RequestMapping(value = {"/logout"}, method = RequestMethod.POST)
     public String logoutDo(HttpServletRequest request,HttpServletResponse response)
     {
@@ -65,11 +130,17 @@ public class LoginController {
 	  
         return "redirect:/";
     }
+    
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
-	public String profile()
+	public ModelAndView  profile(ModelAndView modelAndView)
 	{
-	   
-	    return "profile";
+    	Student Student = new Student();
+    	Student.setStname("profile");
+      
+        modelAndView.addObject("student", Student);
+        modelAndView.setViewName("profile");
+        return modelAndView;
+	    
 	}
 	
 	// @RequestMapping(value = "/attendance", method = RequestMethod.GET)

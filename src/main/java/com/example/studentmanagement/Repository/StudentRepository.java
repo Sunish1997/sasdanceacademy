@@ -15,6 +15,12 @@ public interface StudentRepository extends JpaRepository<Student, Long>
 
 @Query(value="select s.id, s.stname, c.coursename , s.attdance ,s.attboolean from student s Inner JOIN course c ON s.course=c.id", nativeQuery=true)
 List<Object[]> findStudent();
+
+@Query(value="select s.id, s.stname, c.coursename , s.attdance ,s.attboolean, s.fee, s. mobileno, s.email, s.dob, s.address, s.gender, s.studentid from student s Inner JOIN course c ON s.course=c.id where s.id = :id ", nativeQuery=true)
+List<Object[]> findStudentProfile(@Param("id") int id);
+
+@Query(value="select s.id, s.stname, c.coursename , s.attdance ,s.attboolean, s.fee, s. mobileno, s.email, s.dob, s.address, s.gender, s.studentid from student s Inner JOIN course c ON s.course=c.id where s.studentid = :studentid ", nativeQuery=true)
+List<Object[]> findStudentProfileByStdid(@Param("studentid") String studentid);
 }
 
 

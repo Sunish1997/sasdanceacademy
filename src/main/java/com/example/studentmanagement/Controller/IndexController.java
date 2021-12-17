@@ -95,6 +95,14 @@ public String adminlogin(Model model)
       return "login";
 }
 
+@RequestMapping(value = "/studentlogin", method = RequestMethod.GET)
+public String studentlogin(Model model)
+{
+   
+      model.addAttribute("user",new Login());
+
+      return "studentlogin";
+}
 
 
 }

@@ -1,5 +1,6 @@
 package com.example.studentmanagement.Domain;
  
+import java.sql.Date;
 import java.util.List;
  
 import javax.persistence.CascadeType;
@@ -27,7 +28,12 @@ private String attdance;
 
 private boolean attboolean;
 
-
+private int  mobileno; 
+private String email;
+private Date dob;
+private String  address;
+private String  gender;
+private String studentid  ;
 
 
 
@@ -78,7 +84,57 @@ public int getCourse() {
 public void setCourse(int course) {
 	this.course = course;
 }
+
+public int getMobileno() {
+	return mobileno;
+}
+
+public void setMobileno(int mobileno) {
+	this.mobileno = mobileno;
+}
+
+public String getEmail() {
+	return email;
+}
+
+public void setEmail(String email) {
+	this.email = email;
+}
+
+public Date getDob() {
+	return dob;
+}
+
+public void setDob(Date dob) {
+	this.dob = dob;
+}
+
+public String getAddress() {
+	return address;
+}
+
+public void setAddress(String address) {
+	this.address = address;
+}
+
+public String getGender() {
+	return gender;
+}
+
+public void setGender(String gender) {
+	this.gender = gender;
+}
+
+public String getStudentid() {
+	return studentid;
+}
+
+public void setStudentid(String studentid) {
+	this.studentid = studentid;
+}
  
+
+
 
  
 }
