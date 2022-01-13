@@ -1,6 +1,7 @@
 package com.example.studentmanagement.Domain;
  
 import java.sql.Date;
+import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
  
@@ -28,6 +29,49 @@ private boolean attboolean;
 private Date attdate;
 
 private String attdance;
+
+
+// private String attMonthString;
+
+/*
+private String att1;
+private String att2;
+private String att3;
+private String att4;
+private String att5;
+private String att6;
+
+private String att7;
+private String att8;
+private String att9;
+private String att10;
+private String att11;
+private String att12;
+private String att13;
+private String att14;
+private String att15;
+private String att16;
+private String att17;
+private String att18;
+private String att19;
+private String att20;
+private String att21;
+private String att22;
+private String att23;
+
+private String att24;
+private String att25;
+private String att26;
+private String att27;
+private String att28;
+private String att29;
+private String att30;
+private String att31;
+
+
+*/
+
+
 
 public Long getId() {
 	return id;
@@ -76,7 +120,6 @@ public String getAttdance() {
 public void setAttdance(String attdance) {
 	this.attdance = attdance;
 }
-
 
  
 

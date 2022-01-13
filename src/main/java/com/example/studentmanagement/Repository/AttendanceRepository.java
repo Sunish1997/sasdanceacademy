@@ -12,6 +12,10 @@ public interface AttendanceRepository extends JpaRepository<AttendanceHistory, L
 {
 	@Query(value="select  id,stdid , attdance ,attboolean,  attdate from attendancehistory where attdate = :attdate and stdid = :stdid ", nativeQuery=true)
 	List<Object[]>  findAllByPublicationDate(@Param("attdate") Date attdate,@Param("stdid") Long stdid);
+	
+//	select day(a.attdate), a.attdance , a.stdid from attendancehistory a inner join student b on a.stdid = b.id where year(attdate) = 2021 and month(attdate)=12  and a.stdid = 25;
+	@Query(value="select day(a.attdate), a.attdance , a.stdid from attendancehistory a inner join student b on a.stdid = b.id where year(attdate) = :year and month(attdate)=  :month  and a.stdid = :stdid ", nativeQuery=true)
+	List<Object[]>  findAttReportList(@Param("year") Long year,@Param("month") Long month,@Param("stdid") Long stdid);
 }
 
 
